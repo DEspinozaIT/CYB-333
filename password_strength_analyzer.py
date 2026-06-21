@@ -1,5 +1,6 @@
 password = input("Enter a password to analyze: ")
 score = 0
+recommendations = []
 
 print("\nPassword Analysis")
 print("-----------------")
@@ -10,6 +11,7 @@ if len(password) >= 15:
     score += 1
 else:
     print("Length Requirement: FAIL - Password should be at least 15 characters.")
+    recommendations.append("Make your password at least 15 characters long.")
 
 has_upper = any(char.isupper() for char in password)
 
@@ -19,6 +21,7 @@ if has_upper:
     
 else:
     print("Uppercase Requirement: FAIL - Add at least one uppercase letter.")
+    recommendations.append("Add at least one uppercase letter.")
 
 has_lower = any(char.islower() for char in password)
 
@@ -27,6 +30,7 @@ if has_lower:
     score += 1
 else:
     print("Lowercase Requirement: FAIL – Add at least one lowercase letter.")
+    recommendations.append("Add at least one lowercase letter.")
 
 has_number = any(char.isdigit() for char in password)
 
@@ -35,6 +39,7 @@ if has_number:
     score += 1
 else:
     print("Number Requirement: FAIL - Add at least one number.")
+    recommendations.append("Add at least one number.")
 
 special_characters = "!@#$%^&*()-_=+[]{}|;:,.<>?/"
 
@@ -45,6 +50,7 @@ if has_special:
     score += 1
 else:
     print("Special Character Requirement: FAIL - Add at least one special character.")
+    recommendations.append("Add at least one special character.")
 
 print(f"\nTotal Score: {score}/5")
 
@@ -58,3 +64,10 @@ else:
     rating = "VERY STRONG"
 
 print(f"Password Strength: {rating}")
+
+if recommendations:
+    print("\nRecommendations:")
+    for item in recommendations:
+        print(f"- {item}")
+else:
+    print("\nNo recommendations. Password meets all requirements.")
