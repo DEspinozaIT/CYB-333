@@ -47,3 +47,14 @@ else:
     print("Special Character Requirement: FAIL - Add at least one special character.")
 
 print(f"\nTotal Score: {score}/5")
+
+if score <= 1:
+    rating = "WEAK"
+elif score <= 3:
+    rating = "MODERATE"
+elif score == 4:
+    rating = "STRONG"
+else:
+    rating = "VERY STRONG"
+
+print(f"Password Strength: {rating}")
