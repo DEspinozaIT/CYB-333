@@ -22,3 +22,10 @@ if has_lower:
     print("Lowercase Requirement: PASS")
 else:
     print("Lowercase Requirement: FAIL – Add at least one lowercase letter.")
+
+has_number = any(char.isdigit() for char in password)
+
+if has_number:
+    print("Number Requirement: PASS")
+else:
+    print("Number Requirement: FAIL - Add at least one number.")
