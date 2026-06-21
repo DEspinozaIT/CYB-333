@@ -15,3 +15,10 @@ if has_upper:
     print("Uppercase Requirement: PASS")
 else:
     print("Uppercase Requirement: FAIL - Add at least one uppercase letter.")
+
+has_lower = any(char.islower() for char in password)
+
+if has_lower:
+    print("Lowercase Requirement: PASS")
+else:
+    print("Lowercase Requirement: FAIL – Add at least one lowercase letter.")
