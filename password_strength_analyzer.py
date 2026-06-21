@@ -29,3 +29,12 @@ if has_number:
     print("Number Requirement: PASS")
 else:
     print("Number Requirement: FAIL - Add at least one number.")
+
+special_characters = "!@#$%^&*()-_=+[]{}|;:,.<>?/"
+
+has_special = any(char in special_characters for char in password)
+
+if has_special:
+    print("Special Character Requirement: PASS")
+else:
+    print("Special Character Requirement: FAIL - Add at least one special character.")
